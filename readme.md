@@ -28,7 +28,7 @@ sudo pip install docker-compose
 
 ## Project setup ##
 
-###Please follow this instructions to setup the project locally in a docker container
+### How to do it ? ###
 
 - Make sure you are at the root of the project
 ```
@@ -39,7 +39,7 @@ sudo pip install docker-compose
 - myproject : is the name given to your project
 - myfqdn : Full qualified domain name. The server name to be used into your basic nginx default config file
 - destination_directory : The directory in which the project will be moved after the creation.
-  You can juste put "." to specify the current directory
+  You can just put "." to specify the current directory
 
 
 ## Complete project Setup ##
@@ -78,4 +78,11 @@ sudo pip install docker-compose
 
 I know the first method is too long. So why not see the second method. You just have to launch another script
 
-pre copied in the project
+pre copied in the project.
+
+Make sure to be on the root of your project
+
+```
+- chmod +x deploy.sh
+- ./deploy.sh
+```
