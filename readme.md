@@ -40,3 +40,42 @@ sudo pip install docker-compose
 - myfqdn : Full qualified domain name. The server name to be used into your basic nginx default config file
 - destination_directory : The directory in which the project will be moved after the creation.
   You can juste put "." to specify the current directory
+
+
+## Complete project Setup ##
+
+### Method 1 ###
+
+- First Build of the project with docker
+```
+- docker build .
+```
+
+- Create necessary tables and migrate database
+```
+- docker-compose run web python /code/manage.py migrate --noinput
+```
+
+- Run test to assure everything is OK
+```
+- docker-compose run web python /code/manage.py test
+```
+
+- Collect static files in order to serve statics with nginx
+```
+- docker-compose run web python /code/manage.py collectstatic --noinput
+```
+
+- Create a superuser in order to access Django admin IHM
+```
+- docker-compose run web python /code/manage.py superuser --username test1 --password 123321 --noinput --email 'admin@email.com'
+```
+
+- Build again project and up with docker-compose in detached mode. You can remove ```-d``` option
+```
+- docker-compose up -d --build
+```
+
+I know the first method is too long. So why not see the second method. You just have to launch another script
+
+pre copied in the project

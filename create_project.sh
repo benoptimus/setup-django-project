@@ -3,8 +3,6 @@
 set -euo pipefail
 
 
-
-
 while getopts ":n:s:d:" opt; do
   case $opt in
     n) project_name="$OPTARG"
@@ -74,6 +72,9 @@ sed -i "s/project_name/""$project_name""/g" $project_name/Procfile
 
 echo "Change PostgreSQL version into Pipfile"
 sed -i "s/psycopg2/psycopg2-binary/g" $project_name/Pipfile
+
+echo "Copy the deploy script into the project"
+cp deploy.sh $project_name/
 
 echo "Move  $project_name into it's final directory"
 mv $project_name $destination/
