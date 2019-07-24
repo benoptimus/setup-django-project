@@ -3,10 +3,6 @@
 set -euo pipefail
 
 
-if [ "$#" -ne 1 ]; then
-    echo "Illegal number of parameters"
-    exit 1
-fi
 
 
 while getopts ":n:s:d:" opt; do
