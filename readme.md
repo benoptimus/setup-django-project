@@ -33,5 +33,10 @@ sudo pip install docker-compose
 - Make sure you are at the root of the project
 ```
 - cd setup
+- ./create_project.sh -n myproject -s myfqdn -d destination_directory
 
 ```
+- myproject : is the name given to your project
+- myfqdn : Full qualified domain name. The server name to be used into your basic nginx default config file
+- destination_directory : The directory in which the project will be moved after the creation.
+  You can juste put "." to specify the current directory
