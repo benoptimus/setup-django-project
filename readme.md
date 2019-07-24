@@ -87,3 +87,6 @@ Make sure to be on the root of your project
 - chmod +x deploy.sh
 - ./deploy.sh
 ```
+
+
+NB . Many to thanks to @fasouto for the initial django 2.x project setup
