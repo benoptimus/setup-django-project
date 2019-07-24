@@ -80,6 +80,7 @@ I know the first method is too long. So why not see the second method. You just 
 
 pre copied in the project.
 
+### Method 2 ###
 Make sure to be on the root of your project
 
 ```
