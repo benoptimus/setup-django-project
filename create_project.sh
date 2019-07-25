@@ -2,6 +2,13 @@
 
 set -euo pipefail
 
+#Check for arguments number
+
+if (( $# != 6 )); then
+    echo "Illegal number of parameters"
+    exit 1
+fi
+
 
 while getopts ":n:s:d:" opt; do
   case $opt in
@@ -12,6 +19,7 @@ while getopts ":n:s:d:" opt; do
     d) destination="$OPTARG"
     ;;
     \?) echo "Invalid option -$OPTARG" >&2
+     exit 1
     ;;
   esac
 
