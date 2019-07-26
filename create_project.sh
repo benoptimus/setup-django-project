@@ -58,15 +58,19 @@ django-admin.py startproject --template=https://github.com/fasouto/django-starte
 echo "Copy Dockerfile inside the project"
 cp Dockerfile $project_name/
 
-echo "Copy docker-compose.yml into the project"
-cp docker-compose.yml $project_name/
+
+echo "Copy readme.md inside the project"
+cp Dockerfile $project_name/
 
 echo "Cleanup project $project_name"
 rm -rf $project_name/config
 rm -rf $project_name/libs
 rm -rf $project_name/tox.ini
 rm -rf $project_name/.editorconfig
-echo /dev/null > $project_name/readme.md
+rm -rf $project_name/readme.md
+
+echo "Copy docker-compose.yml into the project"
+cp docker-compose.yml $project_name/
 
 
 echo "Copy nginx directory into the project"
