@@ -68,6 +68,11 @@ rm -rf $project_name/libs
 rm -rf $project_name/tox.ini
 rm -rf $project_name/.editorconfig
 rm -rf $project_name/readme.md
+rm -rf $project_name/$project_name/settings/local_example.py
+
+echo "Copy new local_example file into the project and make some configurations"
+cp local_example.py $project_name/$project_name/settings/
+
 
 echo "Copy docker-compose.yml into the project"
 cp docker-compose.yml $project_name/
